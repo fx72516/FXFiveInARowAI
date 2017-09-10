@@ -1,0 +1,53 @@
+#project name
+PROJECT(FXFiveInARowAI)
+
+CMAKE_MINIMUM_REQUIRED(VERSION 3.8)
+
+#head file path
+INCLUDE_DIRECTORIES(
+	.
+)
+
+#lib file path
+LINK_DIRECTORIES(
+)
+
+#source directory
+SET (SRC_LIST
+	FXFiveInARowAI.cpp
+	FXFiveInARowAI.h
+	FXFiveInARowAI.ico
+	FXFiveInARowAI.rc
+	fx_application.cpp
+	fx_application.h
+	fx_chessboard.cpp
+	fx_chessboard.h
+	fx_chessman.cpp
+	fx_chessman.h
+	fx_fiar_player.cpp
+	fx_fiar_player.h
+	Resource.h
+	small.ico
+	stdafx.cpp
+	stdafx.h
+	targetver.h
+)
+
+SET(LIB_SRC_LIST
+)
+
+#MESSAGE("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
+MESSAGE("------------------------------${CMAKE_BUILD_TYPE}------------------------------")
+IF (CMAKE_BUILD_TYPE MATCHES "Release")
+	SET(CMAKE_CONFIGURATION_TYPES Release;MinSizeRel;RelWithDebInfo)
+ENDIF ()
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY FXFiveInARowAI/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG FXFiveInARowAI/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE FXFiveInARowAI/bin)
+
+#add executable file
+ADD_EXECUTABLE(FXFiveInARowAI WIN32 ${SRC_LIST})
+
+#add link library
+#TARGET_LINK_LIBRARIES(../lib/lib ${LIB_SRC_LIST})

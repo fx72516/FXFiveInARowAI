@@ -12,7 +12,7 @@ call "D:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/Tool
 
 cmake -G "Visual Studio 15" -D CMAKE_BUILD_TYPE=Release ../src
 
-msbuild FXSudokuDecoder.sln /m
+msbuild FXFiveInARowAI.sln /m
 
 cd ..
 
